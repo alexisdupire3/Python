@@ -51,10 +51,11 @@ for i in range(70):
     l.deposerObjetAleatoirement(potion)
 
 # Ajouter des perroquets un peu partout
+for i in range(5):
+    l.deposerPersonneAleatoirement(Mage())
 for i in range(50):
     #l.deposerPersonneAleatoirement(Perroquet(random.choice(['vert','bleu','rouge','orange','jaune','rose','violet'])))
-    #l.deposerPersonneAleatoirement(Lion(random.choice(['feroce','mignon'])))
-    l.deposerPersonneAleatoirement(Mage())
+    l.deposerPersonneAleatoirement(Lion(random.choice(['feroce','mignon'])))
 
 while True:
     cls()  # Effacer la console

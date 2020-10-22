@@ -1,4 +1,5 @@
 from personnage import Personnage
+from labyrinthe.case import Case
 import random
 
 class Mage(Personnage):
@@ -15,6 +16,7 @@ class Mage(Personnage):
         return "Un mage"
 
     def rencontrer(self, joueur):
+        case = joueur.getCaseCourante()
         print("Un mage vous lance un sort !")
         sort=random.randint(0, 15)
         if sort>=0 and sort<=12:
@@ -25,8 +27,5 @@ class Mage(Personnage):
             print("Mage : Vous êtes sur mon territoire ! Payez la taxe")
             print("[Votre inventaire a été vidé]")
             joueur.clearSac()
+        case.supprimerPersonnage(self)
         input()
-
-    def parler(self, joueur):
-        print("[Le mage a disparu]") 
-        entree = input("#>")

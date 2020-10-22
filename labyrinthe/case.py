@@ -125,6 +125,13 @@ class Case:
         :return: rien
         """
         self._personnages.append(personnage)
+    
+    def supprimerPersonnage(self, personnage):
+        """ Ajoute le personnage sur la case
+        :param personnage: Un personnage
+        :return: rien
+        """
+        self._personnages.remove(personnage)
 
 
     def getObjets(self):
