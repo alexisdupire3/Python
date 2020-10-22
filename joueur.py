@@ -24,6 +24,10 @@ class Joueur:
     def perdreEnergie(self):
         """ Retire un point d'énergie au joueur. """
         self.__energie -= 1
+    
+    def perdreEnergieValeur(self,valeur):
+        """ Retire un point d'énergie au joueur. """
+        self.__energie -= valeur
 
     def gagnerEnergie(self, combien):
         """ Ajoute de l'énergie au joueur. Paramètres :

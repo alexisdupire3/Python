@@ -3,9 +3,9 @@ from joueur import Joueur
 
 from objets.potion import Potion
 from personnes.perroquet import Perroquet
+from personnes.lion import Lion
 
 import random
-
 
 
 import os
@@ -52,6 +52,7 @@ for i in range(70):
 # Ajouter des perroquets un peu partout
 for i in range(50):
     l.deposerPersonneAleatoirement(Perroquet(random.choice(['vert','bleu','rouge','orange','jaune','rose','violet'])))
+    l.deposerPersonneAleatoirement(Lion(random.choice(['feroce','mignon'])))
 
 while True:
     cls()  # Effacer la console

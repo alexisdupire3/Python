@@ -141,3 +141,5 @@ class Labyrinthe:
                     nbMursSupprimes += 1
 
             murs.remove(murASupprimer)
+
+
