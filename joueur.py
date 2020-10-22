@@ -18,7 +18,8 @@ class Joueur:
 
 
     def setEnergie(self,valeur):
-        """ Fise l'energie du joueur à une valeur donnée, sans pouvoir dépasser le maximum autorisé. """
+        """ Fise l'energie du joueur
+        *à une valeur donnée, sans pouvoir dépasser le maximum autorisé. """
         self.__energie = min(valeur, self.__energieMax)
 
     def perdreEnergie(self):
