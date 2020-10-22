@@ -15,6 +15,7 @@ class Lion(Personnage):
         """ Renvoie la description du perroquet."""
         return "Un lion" + self._type
 
+
     def rencontrer(self, joueur):
         if self._type=="feroce":
             print("Un lion "+self._type+" vous attaque ! Vous fuyez et perdez 10 points d'energies")
