@@ -16,6 +16,10 @@ class Joueur:
         """ Renvoie le niveau d'énergie du joueur. """
         return self.__energie
 
+    def clearSac(self):
+        """ Vide le sac du joueur """
+        self._sac = []
+
 
     def setEnergie(self,valeur):
         """ Fise l'energie du joueur à une valeur donnée, sans pouvoir dépasser le maximum autorisé. """
@@ -26,7 +30,7 @@ class Joueur:
         self.__energie -= 1
     
     def perdreEnergieValeur(self,valeur):
-        """ Retire un point d'énergie au joueur. """
+        """ Retire un point d'énergie au joueur. Avec un valeur définie """
         self.__energie -= valeur
 
     def gagnerEnergie(self, combien):
