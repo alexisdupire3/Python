@@ -1,6 +1,6 @@
 import random
 from labyrinthe.case import Case
--
+
 
 class Labyrinthe:
     """ La classe Labyrinthe représente un ensemble de cases ajencées entre elles pour former un labyrinthe.
@@ -141,5 +141,3 @@ class Labyrinthe:
                     nbMursSupprimes += 1
 
             murs.remove(murASupprimer)
-
-
