@@ -1,4 +1,5 @@
 from labyrinthe.labyrinthe import Case
+import datetime
 
 class Joueur:
 
@@ -16,6 +17,10 @@ class Joueur:
         """ Renvoie le niveau d'énergie du joueur. """
         return self.__energie
 
+    def clearSac(self):
+        """ Vide le sac du joueur """
+        self._sac = []
+
 
     def setEnergie(self,valeur):
         """ Fise l'energie du joueur
@@ -27,7 +32,7 @@ class Joueur:
         self.__energie -= 1
     
     def perdreEnergieValeur(self,valeur):
-        """ Retire un point d'énergie au joueur. """
+        """ Retire un point d'énergie au joueur. Avec un valeur définie """
         self.__energie -= valeur
 
     def gagnerEnergie(self, combien):
@@ -93,3 +98,29 @@ class Joueur:
     def mettreObjetDansLeSac(self,objet):
         """ Met l'objet passé en paramètre dans le sac du joueur."""
         self._sac.append(objet)
+
+    def victoire(self, heure, minute):
+        print("""
+
+        .____                                                          
+        |    |    ____                                                 
+        |    |  _/ __ \                                                
+        |    |__\  ___/                                                
+        |_______ \___  >                                               
+                   \/   \/                                                
+        .____          ___.                 .__        __  .__            
+        |    |   _____ \_ |__ ___.__._______|__| _____/  |_|  |__   ____  
+        |    |   \__  \ | __ <   |  |\_  __ \  |/    \   __\  |  \_/ __ \ 
+        |    |___ / __ \| \_\ \___  | |  | \/  |   |  \  | |   Y  \  ___/ 
+        |_______ (____  /___  / ____| |__|  |__|___|  /__| |___|  /\___  >
+                \/    \/    \/\/                    \/          \/     \/
+
+
+        """)
+        x = datetime.datetime.now()
+        heurefin = x.strftime("%H")
+        minutefin = x.strftime("%M")
+
+        heurefin = heurefin - heure
+        minutefin = minutefin - minute
+        print("   Vous avez réalisé un temps de "+heurefin+":"+minutefin)
