@@ -1,4 +1,5 @@
 from personnage import Personnage
+from objets.steak import Steak
 import random
 
 class Lion(Personnage):
@@ -13,12 +14,32 @@ class Lion(Personnage):
 
     def description(self):
         """ Renvoie la description du perroquet."""
-        return "Un lion" + self._type
+        return "Un lion " + self._type
 
     def rencontrer(self, joueur):
         if self._type=="feroce":
-            print("Un lion "+self._type+" vous attaque ! Vous fuyez et perdez 10 points d'energies")
-            joueur.perdreEnergieValeur(10)      
+            SteakSac = 0
+            Ligne = 0
+            print("Un lion "+self._type+" vous attaque !")
+            for objet in joueur.getSac(): #Verification si Steak est dans le sac
+                if objet.__class__==Steak:
+                    SteakSac += 1
+                    Ligne += 1
+
+
+            if SteakSac > 0 :
+                print("Vous avez un Steak dans votre sac. Voulez-vous l'utiliser ? [oui - non]")
+                entree = input("#>")
+                if entree == "oui":
+                    print("Lion "+self._type+": Miam ! Rhexcellent !")
+                    joueur.getSac().remove(joueur.getSac()[Ligne-1])
+                    self._type="mignon"
+                else:
+                    print("[Vous fuyez et perdez 10 points d'energies]")
+                    joueur.perdreEnergieValeur(10)
+            else :
+                print("[Vous fuyez et perdez 10 points d'energies]")
+                joueur.perdreEnergieValeur(10)      
         else:
             print("Un lion "+self._type+" vous fait une lechouille")
         input()
